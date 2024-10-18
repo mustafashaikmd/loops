@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loops</title>
+</head>
+<body>
+    <h3>Multiplication Table of 5 using For loop</h3>
+    <div id="table"></div>
+    <h3>Sum of Even Numbers between 1 and 50 using For loop</h3>
+    <div id="even"></div>
+    <h3>Prime Numbers from 2 to 20 using While loop</h3>
+    <div id="prime"></div>
+    <h3>Sum of Odd Numbers from 1 to 20 using While loop</h3>
+    <div id="odd"></div>
+    <h3>Factorial of a given Number using While loop</h3>
+    <div id="factorial"></div>
+</body>
+<script>
+    //Multiplication Table of 5
+    let n = 5;
+    let result = '';
+    for(k=1;k <= 10;k++) {
+        result += `${n} x ${k} = ${n * k}<br>`;
+        document.getElementById('table').innerHTML = result;
+    }
+
+    //Sum of Even Numbers from 1 to 50
+    let sum=0;
+    for(i=0;i<=50;i+=2){
+        sum=sum+i;
+    }
+    document.getElementById('even').innerHTML = 'Sum of Even Numbers from 1 to 50 is: '+sum;
+
+    //Prime Numbers from 2 to 20
+    let num = 2;
+    let primes=''
+    while (num <= 20) {
+        let isPrime = true;
+        let i = 2;
+        while (i <= num/2) {
+            if (num % i == 0) { 
+                isPrime = false; 
+                break;
+            }
+            i++;
+        }
+        if (isPrime) {
+            primes+=num+', ';
+        }
+        num++;
+    }
+    document.getElementById('prime').innerHTML= primes;
+
+    //Sum of odd numbers between 1 and 20
+    let num1=1;
+    let oddsum=0;
+    while(num1<=20){
+        oddsum+=num1;
+        num1+=2;
+    }
+    document.getElementById('odd').innerHTML=oddsum
+
+    //Factorial of a given Number
+    let number=prompt('Enter the Number to which factorial is to be calculated');
+    let fact=1;
+    let f=number;
+    while(f>0){
+        fact*=f;
+        f--
+    }
+    document.getElementById('factorial').innerHTML=fact
+</script>
+</html>
